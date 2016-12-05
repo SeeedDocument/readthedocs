@@ -171,6 +171,43 @@ nav.stickynav {
 }
 
 
+/**
+ * 新增折叠功能
+ * by longfei
+ * @2016-12-02
+ */
+.wy-menu-vertical .main-title{
+  background: #F7F7F7;
+  line-height: 40px;
+  padding: 0px;
+  padding-left: 17px;
+  font-size: 16px;
+  color: #000000;
+  border-top: 1px solid #dfdfdf;
+}
+.wy-menu-vertical .main-title:last-child{
+  border-bottom: 1px solid #dfdfdf;
+}
+.wy-menu-vertical .nav-item-title{
+  background: #fff;
+  line-height: 40px;
+  padding: 0px;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #000000;
+}
+.wy-menu-vertical .b-hide{
+  display: none;
+}
+.wy-menu-vertical .manipulate{
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  line-height: 41px;
+  font-size: 14px;
+  color: #000000;
+}
+
 
 /**
  * 移动端

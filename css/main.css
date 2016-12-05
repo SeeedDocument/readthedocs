@@ -118,6 +118,7 @@ a:visited { }
 .rel { position: relative;}
 .p0 { padding: 0px!important;}
 img {display: block;vertical-align: middle;}
+.hide {display: none}
 
 button,
 input,
@@ -128,6 +129,7 @@ textarea {
   font: inherit; /* 2 */
   margin: 0; /* 3 */
 }
+
 
 
 
