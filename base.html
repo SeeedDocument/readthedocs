@@ -50,7 +50,7 @@
   <script src="{{ base_url }}/js/modernizr-2.8.3.min.js"></script>
   <script src="{{ base_url }}/js/highlight.pack.js"></script>
   <script src="{{ base_url }}/js/theme.js"></script>
-  <script src="statics3.seeedstudio.co/assets/lib/jquery.cookie.min.js"></script>
+  <script src="//statics3.seeedstudio.com/assets/lib/jquery.cookie.min.js"></script>
   {%- block extrahead %} {% endblock %}
 
   {%- for path in extra_javascript %}
@@ -262,16 +262,29 @@ Build Date UTC : {{ build_date_utc }}
             // $('.wy-menu-vertical .current').find('.subnav').each(function(){
             //   $(this).find('li').hide();
             // });
-            var flag = $(this).closest('.subnav').find('li').is(":hidden");
-             navItem = $(this).attr('data-title');
+            foldMenu($(this));
+         });
+         $('.wy-menu-vertical').on('click', '.js-manipulate', function() {
+           foldMenu($(this));
+         });
+
+         /**
+          * [foldMenu 折叠功能]
+          * @return {[type]} [description]
+          */
+         function foldMenu(ths){
+           var flag = $(ths).closest('.subnav').find('li').is(":hidden");
+            navItem = $(ths).attr('data-title');
+            console.log($(ths));
+            console.log(navItem)
             if(flag) {
-              $(this).closest('.subnav').find('li').show();
-              $(this).closest('.subnav').find('ul').show();
-              $(this).closest('.subnav').find('.js-manipulate i').removeClass('fa-plus').addClass('fa-minus');
+              $(ths).closest('.subnav').find('li').show();
+              $(ths).closest('.subnav').find('ul').show();
+              $(ths).closest('.subnav').find('.js-manipulate i').removeClass('fa-plus').addClass('fa-minus');
             } else {
-              $(this).closest('.subnav').find('li').hide();
-              $(this).closest('li').show();
-              $(this).closest('.subnav').find('.js-manipulate i').removeClass('fa-minus').addClass('fa-plus');
+              $(ths).closest('.subnav').find('li').hide();
+              $(ths).closest('li').show();
+              $(ths).closest('.subnav').find('.js-manipulate i').removeClass('fa-minus').addClass('fa-plus');
             }
             // 首次进来要跳转
             var scrollTop = $.cookie('wike_scroll');
@@ -279,8 +292,8 @@ Build Date UTC : {{ build_date_utc }}
               $('.wy-nav-side').scrollTop(scrollTop);
               $.cookie('wike_scroll',0);
             }
-            
-         });
+         }
+
          // 默认展示 navItem
          $('.wy-menu-vertical .main-title').each(function(){
             if($(this).attr('data-title') == navItem) {
