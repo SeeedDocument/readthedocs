@@ -4109,7 +4109,7 @@ div[class^='highlight'] pre {
 }
 
 .wy-menu-vertical li.on a,.wy-menu-vertical li.current>a {
-    font-family: OpenSans-Bold;
+    font-family: OpenSans-Bold, Helvetica, Arial,sans-serif,Arial;;
     font-size: 12px;
     color: #000000;
     line-height: 30px;
@@ -4364,38 +4364,8 @@ footer p {
 }
 
 @media screen and (max-width: 768px) {
-    .wy-body-for-nav {
-        background:#fcfcfc
-    }
-
     .wy-nav-top {
-        display: block
-    }
-
-    .wy-nav-side {
-        left: -300px
-    }
-
-    .wy-nav-side.shift {
-        width: 85%;
-        left: 0
-    }
-
-    .wy-nav-content-wrap {
-        margin-left: 0
-    }
-
-    .wy-nav-content-wrap .wy-nav-content {
-        padding: 1.618em
-    }
-
-    .wy-nav-content-wrap.shift {
-        position: fixed;
-        min-width: 100%;
-        left: 85%;
-        top: 0;
-        height: 100%;
-        overflow: hidden
+        display: none;
     }
 }
 

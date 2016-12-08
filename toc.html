@@ -1,14 +1,12 @@
 
 {% if nav_item.children %}
     <ul class="subnav A"  >
-        <li><a href="/{{ nav_item.title }}" style="padding : 0px;" > 
-               <span class="main-title" style="background: #F7F7F7;
-    line-height: 40px;
-    padding: 0px;
-    padding-left: 17px;
-    font-size: 16px;
-    color: #000000;" >{{ nav_item.title }}</span>
-              </a></li>
+        <li>
+           <a href="javascrip:;" class="p0" > 
+               <span class="main-title" data-title="{{ nav_item.title }}" >{{ nav_item.title }}</span>
+               <div class="manipulate js-manipulate"><i class="fa fa-plus" ></i></div>
+           </a>
+        </li>
         {% for nav_item in nav_item.children %}
             {% include 'toc_left.html' %}
         {% endfor %}
