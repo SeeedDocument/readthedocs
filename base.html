@@ -235,6 +235,7 @@ Build Date UTC : {{ build_date_utc }}
 <script>
       $(function(){
          var navItem = 'Platform' ;// 用户选择主菜单
+         
          //接入返回顶部按钮
          // backToTop(1000);
          $('.wy-menu-vertical li.current').find('i').removeClass("fa-caret-right").addClass("fa-caret-down");
@@ -252,8 +253,10 @@ Build Date UTC : {{ build_date_utc }}
                path: "/"
            });
          });
-         var wike_date = JSON.parse($.cookie('wike_date'));
-         navItem = wike_date.navItem;
+         if($.cookie('wike_date') != undefined){
+           var wike_date = JSON.parse($.cookie('wike_date'));
+           navItem = wike_date.navItem;
+         }
          /**
           * 折叠功能
           */
@@ -275,8 +278,6 @@ Build Date UTC : {{ build_date_utc }}
          function foldMenu(ths){
            var flag = $(ths).closest('.subnav').find('li').is(":hidden");
             navItem = $(ths).attr('data-title');
-            console.log($(ths));
-            console.log(navItem)
             if(flag) {
               $(ths).closest('.subnav').find('li').show();
               $(ths).closest('.subnav').find('ul').show();
@@ -324,7 +325,6 @@ Build Date UTC : {{ build_date_utc }}
        //        //console.log('右侧距离是：'+fixed_right);
        //        $('.back-to-top').css('right',(fixed_right-100)+'px');
        //    }
-
        var $top = $('.back-to-top');
        if ($top != "") {
          $(window).scroll(function() {
